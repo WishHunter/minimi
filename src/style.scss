@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Jura:400,600,700|Oswald&display=swap&subset=cyrillic');
+
+@import 'normalize';
+@import '../node_modules/swiper/swiper';
+@import '../node_modules/aos/src/sass/aos';
+
+@import './components/common/variables';
+@import './components/common/mixin';
+@import './components/common/base';
+
+@import './components/header/header';
+@import './components/hero/hero';
+@import './components/advantages/advantages';
+@import './components/catalog/catalog';
+@import './components/parameters/parameters';

@@ -1,0 +1,13 @@
+- var $media = './source/'
+- var $img = $media + 'img/'
+
+
+mixin img(name, className)
+  //- -var nameWebp = name.split('.')[0] + '.webp'
+  //- picture
+    //- source(srcset= img + nameWebp, type="image/webp")
+  img(src= $img + name, class= className, alt= name)
+
+mixin svg(id, widthSVG, heightSVG, className)
+  svg(class= className height=heightSVG width=widthSVG)
+    use(xlink:href="./img/sprites/sprite.svg#" + id)

@@ -1,0 +1,90 @@
+.catalog {
+  padding: 32px 0;
+
+  $this: &;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0%, 1fr));
+    grid-gap: 16px 12px;
+  }
+
+  &__card {
+    position: relative;
+    height: 335px;
+    overflow: hidden;
+
+    &.aos-animate {
+      perspective: 500px;
+      overflow: visible;
+    }
+
+    &:hover {
+      #{$this}__card-front {
+        transform: rotateY(-180deg);
+      }
+      #{$this}__card-back {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+
+  &__card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #26211e;
+    background-image: url('../img/card_bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 16px;
+    transition: transform 0.3s ease-in;
+    backface-visibility: hidden;
+  }
+
+  &__card-dog {
+    position: absolute;
+    max-width: 200%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__card-add {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  &__card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #6a5c54;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease-in;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+  }
+
+  &__card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 28px;
+  }
+
+  &__card-text {
+    margin-bottom: 4px;
+  }
+
+  &__catalog-btn {
+    margin-top: 28px;
+    padding: 16px 40px;
+  }
+}

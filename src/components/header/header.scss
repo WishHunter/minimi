@@ -1,0 +1,59 @@
+.header {
+  padding: 28px 0;
+
+  $this: &;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 24px;
+  }
+
+  &__sub {
+    font-size: 19px;
+    color: $color-gray;
+    font-weight: bold;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $color-white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 32px;
+    text-decoration: none;
+    transition: color .2s ease-out;
+
+    &:hover {
+      color: $color-main;
+
+      #{$this}__link-gray {
+        color: mix($color-main, $color-gray, 50%)
+      }
+    }
+  }
+
+  &__link-gray {
+    margin: 0 8px;
+    color: $color-gray;
+    transition: color .3s ease-out;
+  }
+}

@@ -1,0 +1,131 @@
+.parameters {
+  padding: 100px 0;
+
+  &__container {
+    position: relative;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+
+  &__desc {
+    font-size: 30px;
+    color: $color-gray;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  &__scheme {
+    position: relative;
+    display: inline-block;
+    padding: 120px 0;
+  }
+
+  &__scheme-parameter {
+    position: absolute;
+
+    $this: &;
+
+    &-line {
+      max-width: none;
+    }
+
+    &-text {
+      position: absolute;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    &:nth-of-type(1) {
+      top: 90px;
+      left: 65px;
+
+      #{$this}-text {
+        bottom: calc(100% + 5px);
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &:nth-of-type(2) {
+      top: 215px;
+      left: 52%;
+
+      #{$this}-text {
+        bottom: calc(100% + 5px);
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &:nth-of-type(3) {
+      top: 275px;
+      left: 75%;
+
+      #{$this}-text {
+        bottom: calc(100% + 5px);
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &:nth-of-type(4) {
+      bottom: 270px;
+      left: 70%;
+
+      #{$this}-text {
+        bottom: calc(100% + 5px);
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &:nth-of-type(5) {
+      top: 390px;
+      left: 50%;
+
+      #{$this}-text {
+        top: 100%;
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &:nth-of-type(6) {
+      top: 280px;
+      right: 75%;
+
+      #{$this}-text {
+        top: calc(100% - 35px);
+        left: 0;
+        transform: translateX(-50%);
+      }
+    }
+
+    &:nth-of-type(7) {
+      top: 200px;
+      right: 83%;
+
+      #{$this}-text {
+        bottom: calc(100% + 5px);
+        left: 0;
+        transform: translateX(-50%);
+      }
+    }
+
+    &:nth-of-type(8) {
+      top: 145px;
+      right: 58%;
+
+      #{$this}-text {
+        bottom: calc(100% + 5px);
+        left: 0;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
