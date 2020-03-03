@@ -1,0 +1,33 @@
+mixin documents
+  section.documents
+    .container
+      h3.documents__title Документы наших щеночков
+      p.documents__desc подтверждают чистокровность/породистость
+      .documents__flex
+        .documents__document(
+          data-aos="fade-up"
+        )
+          .documents__img-block
+            +img('document1.png', 'documents__img')
+          p.documents__text Ветеринарный паспорт международного образца
+        .documents__document(
+          data-aos="fade-up"
+          data-aos-delay="200"
+        )
+          .documents__img-block
+            +img('document2.png', 'documents__img')
+          p.documents__text Щенячья метрика (меняется на родословную)
+        .documents__document(
+          data-aos="fade-up"
+          data-aos-delay="400"
+        )
+          .documents__img-block
+            +img('document3.png', 'documents__img')
+          p.documents__text Клеймо на пузике
+        .documents__document(
+          data-aos="fade-up"
+          data-aos-delay="600"
+        )
+          .documents__img-block
+            +img('document4.png', 'documents__img')
+          p.documents__text Чип (по запросу)

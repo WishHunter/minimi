@@ -73,15 +73,17 @@ mixin catalog
     .container
       .catalog__container
         each card in cardData
-          .catalog__card(data-aos="flip-left")
-            .catalog__card-front
-              +img(card.img, 'catalog__card-dog')
-              a.catalog__card-add(href="#")
-                +img('icons/card_plus.png', 'catalog__card-add-icon')
-            .catalog__card-back
-              .catalog__card-content
-                p.catalog__card-title !{card.title}
-                p.catalog__card-text !{card.text1}
-                p.catalog__card-text !{card.text2}
-                a.btn.catalog__catalog-btn(href="#")
-                  span.btn__text Хочу!
+          label
+            input.catalog__checkbox(type="radio" name="catalog")
+            .catalog__card(data-aos="flip-left")
+              .catalog__card-front
+                +img(card.img, 'catalog__card-dog')
+                .catalog__card-add
+                  +img('icons/card_plus.png', 'catalog__card-add-icon')
+              .catalog__card-back
+                .catalog__card-content
+                  p.catalog__card-title !{card.title}
+                  p.catalog__card-text !{card.text1}
+                  p.catalog__card-text !{card.text2}
+                  a.btn.catalog__btn(href="#")
+                    span.btn__text Хочу!

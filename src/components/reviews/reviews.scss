@@ -1,10 +1,17 @@
-.catalog {
+.reviews {
   padding: 32px 0;
 
   $this: &;
 
+  &__title {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+  }
+
   &__container {
     display: grid;
+    margin-top: 60px;
     grid-template-columns: repeat(4, minmax(0%, 1fr));
     grid-gap: 16px 12px;
   }
@@ -59,11 +66,13 @@
 
   &__card-dog {
     position: absolute;
-    max-width: 200%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.2s ease-in;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 
   &__card-add {
@@ -76,6 +85,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    padding: 16px;
     background-color: #6a5c54;
     border-radius: 16px;
     display: flex;

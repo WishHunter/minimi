@@ -1,0 +1,20 @@
+.help {
+  padding: 100px 0;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__item-text {
+    margin: 0;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+}

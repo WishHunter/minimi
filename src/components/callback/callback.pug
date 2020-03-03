@@ -1,0 +1,17 @@
+mixin callback
+  section.callback
+    .container
+      .callback__container
+        img.callback__img(
+          src= $img + 'callback_img.png'
+          class= className
+          alt= 'callback_img'
+          data-aos="fade-up"
+          )
+        form.callback__content(action="")
+          h3.callback__title Хотите щеночка другого окраса?
+          p.callback__desc У нас есть любой
+          p.callback__text Оставьте телефон, и мы отправим фото нужного щеночка, поможем с выбором и проконсультируем
+          input.callback__input(type="text" placeholder="Введите ваш номер телефона")
+          button.btn.btn--border
+            span.btn__text Свяжитесь со мной!
