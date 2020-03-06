@@ -1,42 +1,6 @@
 mixin reviews
   -
-    const reviewData = [
-      {
-        img: 'review1.jpg',
-        title: 'Вы лучшие! спасибо',
-        text: 'Наконец-то мечта Софии осуществилась, огромное спасибо за такого очаровашку!',
-      },
-      {
-        img: 'review2.jpg',
-        title: 'Вы лучшие! спасибо',
-        text: 'Наконец-то мечта Софии осуществилась, огромное спасибо за такого очаровашку!',
-      },
-      {
-        img: 'review3.jpg',
-        title: 'Вы лучшие! спасибо',
-        text: 'Наконец-то мечта Софии осуществилась, огромное спасибо за такого очаровашку!',
-      },
-      {
-        img: 'review4.jpg',
-        title: 'Вы лучшие! спасибо',
-        text: 'Наконец-то мечта Софии осуществилась, огромное спасибо за такого очаровашку!',
-      },
-      {
-        img: 'review5.jpg',
-        title: 'Вы лучшие! спасибо',
-        text: 'Наконец-то мечта Софии осуществилась, огромное спасибо за такого очаровашку!',
-      },
-      {
-        img: 'review6.jpg',
-        title: 'Вы лучшие! спасибо',
-        text: 'Наконец-то мечта Софии осуществилась, огромное спасибо за такого очаровашку!',
-      },
-      {
-        img: 'review7.jpg',
-        title: 'Вы лучшие! спасибо',
-        text: 'Наконец-то мечта Софии осуществилась, огромное спасибо за такого очаровашку!',
-      }
-    ]
+    const reviewData = ['review1.jpg','review2.jpg','review3.jpg','review4.jpg','review5.jpg','review6.jpg','review7.jpg','review8.jpg',]
 
   section.reviews
     .container
@@ -47,12 +11,10 @@ mixin reviews
             input.reviews__checkbox(type="radio" name="review")
             .reviews__card(data-aos="flip-left")
               .reviews__card-front
-                +img(review.img, 'reviews__card-dog')
+                +img(review, 'reviews__card-dog')
                 .reviews__card-add
-                  +img('icons/card_plus.png', 'reviews__card-add-icon')
+                  +svg('more', '30px', '30px', 'reviews__card-add-icon')
               .reviews__card-back
                 .reviews__card-content
-                  p.reviews__card-title !{review.title}
-                  p.reviews__card-text !{review.text}
-                  a.btn.reviews__btn(href="#")
+                  a.btn.reviews__btn.js-open-popup(href="#")
                     span.btn__text Хочу!

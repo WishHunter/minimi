@@ -1,5 +1,6 @@
 .header {
   padding: 28px 0;
+  background-color: $color-bg;
 
   $this: &;
 
@@ -19,12 +20,6 @@
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 24px;
-  }
-
-  &__sub {
-    font-size: 19px;
-    color: $color-gray;
-    font-weight: bold;
   }
 
   &__contacts {

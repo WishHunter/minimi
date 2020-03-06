@@ -43,6 +43,11 @@
       #{$this}__card-dog {
         transform: translate(-50%, -50%) scale(1.05);
       }
+
+      #{$this}__card-add-icon {
+        transform: scale(1.1);
+        fill: #78a700;
+      }
     }
 
 
@@ -79,6 +84,11 @@
     position: absolute;
     top: 16px;
     right: 16px;
+  }
+
+  &__card-add-icon {
+    fill: $color-main;
+    transition: all .2s;
   }
 
   &__card-back {

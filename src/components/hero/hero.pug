@@ -11,14 +11,14 @@ mixin hero
             | Хотите завести щеночка?
             br
             | Подберем для вас самого лучшего!
-          a.btn.btn--border.hero__btn(href="#")
+          a.btn.btn--border.hero__btn.js-open-popup(href="#")
             span.btn__text Хочу щенка!
         .hero__slider.swiper-container
           .hero__slider-wrapper.swiper-wrapper
             .hero__slider-slide.swiper-slide
               +img('slide1.png', 'hero__slider-img')
             .hero__slider-slide.swiper-slide
-              +img('slide1.png', 'hero__slider-img')
+              +img('slide2.png', 'hero__slider-img')
             .hero__slider-slide.swiper-slide
-              +img('slide1.png', 'hero__slider-img')
+              +img('slide3.png', 'hero__slider-img')
           .hero__slider-pagination.swiper-pagination

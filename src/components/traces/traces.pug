@@ -1,0 +1,6 @@
+mixin traces
+  .traces
+    .container
+      .traces__content
+        - for (var x = 0; x < 20; x++)
+          +svg('footprint', '40px', '40px', 'traces__trace')

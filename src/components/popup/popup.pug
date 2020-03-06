@@ -1,0 +1,17 @@
+mixin popup
+  .popup
+    .popup__container
+      a.popup__close.js-close-popup(href="#")
+        +svg('close', '20px', '20px', 'popup__close-icon')
+      img.popup__img(
+        src= $img + 'popup_img.png'
+        class= className
+        alt= 'popup_img'
+        )
+      form.popup__content(action="")
+        h3.popup__title Лучший щенок уже ждет вас!
+        p.popup__text Оставьте телефон, и мы отправим фото нужного щеночка, поможем с выбором и проконсультируем
+        .popup__flex
+          input.popup__input(type="text" placeholder="Введите ваш номер телефона")
+          button.btn.btn--border.popup__btn
+            span.btn__text Хочу щенка!

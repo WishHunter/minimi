@@ -10,6 +10,11 @@ body {
   color: $color-white;
 }
 
+.content {
+  position: relative;
+  z-index: 2;
+}
+
 .container {
   max-width: 1140px;
   padding: 0 20px;
@@ -49,12 +54,14 @@ img {
   position: relative;
   min-width: 140px;
   padding: 20px 40px;
-  border: 1px solid $color-main;
+  border: 2px solid $color-main;
   border-radius: 6px;
   text-align: center;
   text-decoration: none;
   background: none;
   font-size: 20px;
+  color: $color-white;
+  font-weight: bold;
   cursor: pointer;
 
   &::before {
@@ -79,7 +86,7 @@ img {
 
   &__text {
     position: relative;
-    color: $color-white;
+
   }
 
   &:hover:before {
