@@ -5,11 +5,14 @@ mixin reviews
   section.reviews
     .container
       h3.reviews__title Отзывы и фото счастливых хозяев
-      .reviews__slider.swiper-container
-        .reviews__slider-wrapper.swiper-wrapper
-          - for (var x = 1; x < 36; x++)
-            .reviews__slider-slide.swiper-slide
-              +img('review' + x + '.png', 'reviews__slider-img')
-      .reviews__slider-pagination.swiper-pagination
-      .reviews__slider-button.reviews__slider-button-next.swiper-button-next
-      .reviews__slider-button.reviews__slider-button-prev.swiper-button-prev
+      .reviews__container
+        .reviews__slider.swiper-container
+          .reviews__slider-wrapper.swiper-wrapper
+            - for (var x = 1; x < 36; x++)
+              .reviews__slider-slide.swiper-slide
+                +img('review' + x + '.png', 'reviews__slider-img')
+        .reviews__slider-button.reviews__slider-button-next.swiper-button-next
+          +svg('next', '70px', '80px', 'reviews__slider-button-icon')
+        .reviews__slider-button.reviews__slider-button-prev.swiper-button-prev
+          +svg('next', '70px', '80px', 'reviews__slider-button-icon')
+        .reviews__slider-pagination.swiper-pagination
