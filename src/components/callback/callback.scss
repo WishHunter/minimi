@@ -11,17 +11,18 @@
   &__img {
     position: absolute;
     bottom: -20px;
-    left: 0;
+    left: -300px;
     max-width: 100%;
   }
 
   &__content {
     position: relative;
-    padding: 60px 0 340px;
-    text-align: center;
+    margin-left: 45%;
+    padding: 72px 0;
   }
 
   &__title {
+    max-width: 380px;
     margin: 0;
     margin-bottom: 28px;
     font-size: 42px;
@@ -43,19 +44,13 @@
     line-height: 1.5;
   }
 
-  &__flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   &__input {
     display: block;
     width: 100%;
     max-width: 450px;
     padding: 24px 12px 24px 80px;
+    margin-bottom: 36px;
     border-radius: 6px;
-    margin-right: 20px;
     border: none;
     background-color: #f5eddc;
     background-image: url('../img/icons/input_phone.png');

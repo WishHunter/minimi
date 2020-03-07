@@ -1,38 +1,58 @@
 .footer {
   background-image: url('../img/footer_bg.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: bottom center;
   padding: 40px 0 130px;
 
   &__content {
     position: relative;
     border-radius: 6px;
-    background-color: #6a5c54;
+    background-color: rgba(87, 70, 60, 0.612);
     text-align: center;
-    padding: 62px;
+    padding: 40px;
     padding-left: 120px;
+    max-width: 859px;
+    margin: 0 auto;
 
     &:after {
       content: '';
       display: block;
       position: absolute;
-      width: 320px;
-      height: 404px;
+      width: 316px;
+      height: 434px;
       left: 0;
       bottom: 0;
       background-image: url('../img/footer_dog.png');
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
       transform: translate(-50%, 20%);
     }
   }
 
-  &__text {
+  &__title {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 600;
     line-height: 1.5;
     margin-bottom: 30px;
+  }
+
+  &__btn {
+    position: absolute;
+    left: calc(50% + 40px);
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    box-shadow: 0px 8px 13px 0px rgba(0, 0, 0, 0.46);
+
+    &:before {
+      transform: none;
+    }
   }
 }

@@ -1,20 +1,15 @@
 mixin reviews
-  -
-    const reviewData = ['review1.jpg','review2.jpg','review3.jpg','review4.jpg','review5.jpg','review6.jpg','review7.jpg','review8.jpg',]
+  //- -
+    //- const reviewData = ['review1.jpg','review2.jpg','review3.jpg','review4.jpg','review5.jpg','review6.jpg','review7.jpg','review8.jpg',]
 
   section.reviews
     .container
       h3.reviews__title Отзывы и фото счастливых хозяев
-      .reviews__container
-        each review in reviewData
-          label
-            input.reviews__checkbox(type="radio" name="review")
-            .reviews__card(data-aos="flip-left")
-              .reviews__card-front
-                +img(review, 'reviews__card-dog')
-                .reviews__card-add
-                  +svg('more', '30px', '30px', 'reviews__card-add-icon')
-              .reviews__card-back
-                .reviews__card-content
-                  a.btn.reviews__btn.js-open-popup(href="#")
-                    span.btn__text Хочу!
+      .reviews__slider.swiper-container
+        .reviews__slider-wrapper.swiper-wrapper
+          - for (var x = 1; x < 36; x++)
+            .reviews__slider-slide.swiper-slide
+              +img('review' + x + '.png', 'reviews__slider-img')
+      .reviews__slider-pagination.swiper-pagination
+      .reviews__slider-button.reviews__slider-button-next.swiper-button-next
+      .reviews__slider-button.reviews__slider-button-prev.swiper-button-prev

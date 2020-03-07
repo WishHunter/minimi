@@ -19,8 +19,29 @@ var swiper = new Swiper(".hero__slider", {
   }
 });
 
+var swiper = new Swiper(".reviews__slider", {
+  loop: true,
+  speed: 500,
+  slidesPerView: 4,
+  spaceBetween: 30,
+
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".reviews__slider-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: '.reviews__slider-button-next',
+    prevEl: '.reviews__slider-button-prev',
+  },
+});
+
 AOS.init({
-  // mirror: true,
   anchorPlacement: "center-bottom"
 });
 

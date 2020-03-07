@@ -1,4 +1,5 @@
 .reviews {
+  position: relative;
   padding: 32px 0;
 
   $this: &;
@@ -9,116 +10,72 @@
     text-align: center;
   }
 
-  &__container {
-    display: grid;
-    margin-top: 60px;
-    grid-template-columns: repeat(4, minmax(0%, 1fr));
-    grid-gap: 16px 12px;
-  }
-
-  &__checkbox {
-    display: none;
-
-    &:checked + #{$this}__card {
-      #{$this}__card-front {
-        transform: rotateY(-180deg);
-      }
-      #{$this}__card-back {
-        transform: rotateY(0deg);
-      }
-    }
-  }
-
-  &__card {
-    position: relative;
+  &__slider {
     height: 335px;
-    overflow: hidden;
-
-    &.aos-animate {
-      perspective: 500px;
-      overflow: visible;
-    }
-
-    &:hover {
-      #{$this}__card-dog {
-        transform: translate(-50%, -50%) scale(1.05);
-      }
-
-      #{$this}__card-add-icon {
-        transform: scale(1.1);
-        fill: #78a700;
-      }
-    }
-
-
-  }
-
-  &__card-front {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #26211e;
-    background-image: url('../img/card_bg.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    border-radius: 16px;
-    transition: transform 0.3s ease-in;
-    backface-visibility: hidden;
-    cursor: pointer;
   }
 
-  &__card-dog {
+  &__slider-img {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  &__slider-pagination {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.2s ease-in;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__card-add {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-
-  &__card-add-icon {
-    fill: $color-main;
-    transition: all .2s;
-  }
-
-  &__card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 16px;
-    background-color: #6a5c54;
-    border-radius: 16px;
+    bottom: -20px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    transition: transform 0.3s ease-in;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-  }
+    align-items: center;
+    transform: translateX(-50%);
+    width: 100% !important;
+    z-index: 2;
 
-  &__card-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 28px;
-  }
+    .swiper-pagination-bullet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $color-white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      margin: 0 5px;
+      transform: scale(.2);
+      cursor: pointer;
+      transition: all .3s;
 
-  &__card-text {
-    margin-bottom: 4px;
-  }
+      &:after {
+        content: '';
+        display: flex;
+        background-color: $color-gray;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        transition: background .2s;
+      }
 
-  &__btn {
-    margin-top: 28px;
-    padding: 16px 40px;
+      &-active {
+        // display: flex;
+        transform: scale(1);
+
+        &:after {
+          background-color: $color-white;
+          display: block;
+        }
+      }
+
+      &-active-next,
+      &-active-next-next,
+      &-active-prev,
+      &-active-prev-prev {
+        // display: flex;
+        transform: scale(.7);
+      }
+
+      &-active-next-next,
+      &-active-prev-prev {
+        transform: scale(.5);
+      }
+    }
   }
 }

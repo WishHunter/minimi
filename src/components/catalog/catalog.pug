@@ -3,51 +3,58 @@ mixin catalog
     const cardData = [
       {
         img: 'dog1.png',
-        title: 'Крем-соболь',
+        title: 'Рыжий',
+        text: 'Один из самых популярных окрасов. Имеет несколько оттенков.'
       },
       {
         img: 'dog2.png',
-        title: 'Рыжий',
+        title: 'Белый',
+        text: 'Белоснежные щенки выглядят великолепно. Поделимся секретом, как сохранить белую шерсть в течение жизни, чтобы она не пожелтела.'
       },
       {
         img: 'dog3.png',
-        title: 'Белый',
+        title: 'Черный',
+        text: 'В хорошем проявлении встречается редко. Чтобы щенок был чёрным всегда, «не поседел» или не стал чёрно-рыжим, шерсть должна быть хорошо пигментированна.'
       },
       {
         img: 'dog4.png',
-        title: 'Черный',
+        title: 'Кремовый',
+        text: 'Самый популярный окрас. Имеет множество оттенков от «холодного крема» до «тёплого крема».'
       },
       {
         img: 'dog5.png',
-        title: 'Лиловый',
+        title: 'Оранж',
+        text: 'Окрас похож на рыжий, но менее темный. Имеет множество оттенков от лайт-оранж(почти кремовый) до ярко оранжевого. Бывает с соболем и без.'
       },
       {
         img: 'dog6.png',
-        title: 'Пати-колор',
+        title: 'Черно-подпалый',
+        text: 'Окрас нераспространенный. В хорошем экстерьере щенок похож на мишку гризли.'
       },
       {
         img: 'dog7.png',
-        title: 'Кремовый',
+        title: 'Крем-соболь',
+        text: 'Окрас знаменит тем, что соболь с возрастом сходит, и из «серо-пепельного» щенка вырастает щенок кремового окраса с легкой дымкой пепельного на кончиках шерсти.'
       },
       {
         img: 'dog8.png',
-        title: 'Мерле',
+        title: 'Рыже-соболинный',
+        text: 'Очень интересный окрас. Помимо того, что есть множество оттенков рыжего, соболь бывает разный. Сойдет полностью, перецветая в ярко-рыжий, останется почти неизменным или только немного? Решать вам.'
       },
       {
         img: 'dog9.png',
-        title: 'Рыже-соболинный',
+        title: 'Пати-колор',
+        text: 'Один из редких окрасов, сочетающий в себе 2 или более оттенков и цветов. Подобно окрасу «мерле», уникален тем, что расположение этих цветов и оттенков никогда не повторяется.'
       },
       {
         img: 'dog10.png',
-        title: 'Оранж',
+        title: 'Лиловый',
+        text: 'Один из самых редких окрасов, наряду с «мерле» и «голубым». Это цвет моточного шоколада с фиолетовым оттенком.'
       },
       {
         img: 'dog11.png',
-        title: 'Коричневый',
-      },
-      {
-        img: 'dog12.png',
-        title: 'Черно-подпалый',
+        title: 'Мерле',
+        text: 'Мерле(мраморный). Один из самых редких окрасов. Уникален тем, что расположение мрамора никогда не повторяется. Ваш щенок будет единственным в своём окрасе.'
       }
     ]
 
@@ -55,15 +62,21 @@ mixin catalog
     .container
       .catalog__container
         each card in cardData
-          label
-            input.catalog__checkbox(type="radio" name="catalog")
-            .catalog__card(data-aos="flip-left")
-              .catalog__card-front
-                +img(card.img, 'catalog__card-dog')
-                .catalog__card-add
-                  +svg('more', '30px', '30px', 'catalog__card-add-icon')
-              .catalog__card-back
-                .catalog__card-content
-                  p.catalog__card-title !{card.title}
-                  a.btn.catalog__btn.js-open-popup(href="#")
-                    span.btn__text Хочу!
+          .catalog__content
+            label
+              input.catalog__checkbox(type="radio" name="catalog")
+              .catalog__card(
+                data-aos="flip-left"
+                data-aos-anchor-placement="top-bottom"
+                data-aos-duration="800"
+              )
+                .catalog__card-front
+                  +img(card.img, 'catalog__card-dog')
+                  .catalog__card-add
+                    +svg('more', '30px', '30px', 'catalog__card-add-icon')
+                .catalog__card-back
+                  .catalog__card-content
+                    p.catalog__card-text !{card.text}
+            p.catalog__card-title !{card.title}
+            a.btn.btn--border.catalog__btn.js-open-popup(href="#")
+              span.btn__text Хочу!
