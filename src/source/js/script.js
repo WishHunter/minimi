@@ -28,17 +28,17 @@ var swiper = new Swiper(".reviews__slider", {
     768: {
       slidesPerView: 2,
       spaceBetween: 20,
-
-      autoplay: {
-        delay: 6000,
-        disableOnInteraction: false,
-      }
     },
 
     1200: {
       slidesPerView: 4,
       spaceBetween: 30,
     }
+  },
+
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
   },
 
   pagination: {
