@@ -6,9 +6,11 @@ mixin header
           +img('logo.png', 'header__logo-img')
           p.header__title Породистые щенки Померанского Шпица
         .header__contacts
-          a.header__link(href="tel:+79851914142")
-            +img('icons/phone.png', 'header__icon')
-            span.header__link-gray +7 (985)
-            span 191-41-42
+          .header__mobile-block
+            p.header__title--mobile Породистые щенки Померанского Шпица
+            a.header__link(href="tel:+79851914142")
+              +img('icons/phone.png', 'header__icon')
+              span.header__link-gray +7 (985)
+              span 191-41-42
           a.link.header__link-callback.js-open-popup(href="#")
             span.link__text Заказать обратный звонок
