@@ -60,6 +60,7 @@
       position: relative;
       display: inline-block;
       width: 50%;
+      max-width: 200px;
       left: 15px;
     }
   }
@@ -135,7 +136,7 @@
       font-size: 18px;
       padding: 20px 12px 20px 56px;
       background-position: 12px center;
-      margin-bottom: 26px;
+      margin: 0 auto 26px;
     }
 
     @include mobile {
