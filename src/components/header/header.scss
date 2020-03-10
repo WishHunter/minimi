@@ -65,7 +65,20 @@
     }
 
     @include mobile {
-      display: none;
+      display: block;
+      width: 46px;
+      height: 46px;
+      background-color: $color-main;
+      background-image: url('../img/icons/phone-mob.png');
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 100%;
+      margin: 0;
+
+      span {
+        display: none;
+      }
     }
 
     &:hover {
@@ -77,6 +90,12 @@
     }
   }
 
+  &__icon {
+    @include mobile {
+      display: none;
+    }
+  }
+
   &__link-gray {
     margin: 0 8px;
     color: $color-gray;
@@ -85,19 +104,7 @@
 
   &__link-callback {
     @include mobile {
-      display: block;
-      width: 46px;
-      height: 46px;
-      background-color: $color-main;
-      background-image: url('../img/icons/phone-mob.png');
-      background-size: 50%;
-      background-repeat: no-repeat;
-      background-position: center center;
-      border-radius: 100%;
-
-      span {
-        display: none;
-      }
+      display: none;
     }
   }
 }
