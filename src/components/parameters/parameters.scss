@@ -5,6 +5,14 @@
   background-repeat: no-repeat;
   background-position: center center;
 
+  @include tablet {
+    padding: 50px 0;
+  }
+
+  @include mobile {
+    padding: 20px 0;
+  }
+
   &__container {
     position: relative;
     text-align: center;
@@ -15,6 +23,10 @@
     font-weight: bold;
     margin: 0;
     margin-bottom: 24px;
+
+    @include mobile {
+      font-size: 30px;
+    }
   }
 
   &__desc {
@@ -22,12 +34,25 @@
     color: $color-gray;
     font-weight: bold;
     line-height: 1;
+
+    @include mobile {
+      font-size: 20px;
+    }
   }
 
   &__scheme {
     position: relative;
     display: inline-block;
     padding: 120px 0;
+
+    @include tablet {
+      transform: scale(.7);
+    }
+
+    @include mobile {
+      transform: none;
+      padding: 80px 0;
+    }
   }
 
   &__scheme-parameter {
@@ -37,22 +62,39 @@
 
     &-line {
       max-width: none;
+
+      @include mobile {
+        width: 100%;
+      }
     }
 
     &-text {
       position: absolute;
       font-weight: bold;
       white-space: nowrap;
+
+      @include mobile {
+        font-size: 12px;
+        white-space: normal;
+      }
     }
 
     &:nth-of-type(1) {
       top: 90px;
       left: 42px;
 
+      @include mobile {
+        top: 50px;
+      }
+
       #{$this}-text {
         bottom: calc(100% + 5px);
         right: 0;
         transform: translateX(50%);
+
+        @include mobile {
+          transform: none;
+        }
       }
     }
 
@@ -60,10 +102,18 @@
       top: 215px;
       left: 52%;
 
+      @include mobile {
+        top: 135px;
+      }
+
       #{$this}-text {
         bottom: calc(100% + 5px);
         right: 0;
         transform: translateX(50%);
+
+        @include mobile {
+          transform: translateX(15%);
+        }
       }
     }
 
@@ -71,10 +121,18 @@
       top: 275px;
       left: 72%;
 
+      @include mobile {
+        top: 180px;
+      }
+
       #{$this}-text {
-        bottom: calc(100% + 5px);
+        bottom: calc(100% - 5px);
         right: -30px;
         transform: translateX(50%);
+
+        @include mobile {
+          transform: translateX(-5%);
+        }
       }
     }
 
@@ -82,10 +140,18 @@
       bottom: 270px;
       left: 70%;
 
+      @include mobile {
+        bottom: 180px;
+      }
+
       #{$this}-text {
         bottom: calc(100% + 5px);
         right: 0;
         transform: translateX(50%);
+
+        @include mobile {
+          transform: translateX(25%);
+        }
       }
     }
 
@@ -93,10 +159,26 @@
       top: 390px;
       left: 50%;
 
+      @include mobile {
+        top: 280px;
+        left: 47%;
+      }
+
+      #{$this}-line {
+        @include mobile {
+          width: 50%;
+        }
+      }
+
       #{$this}-text {
         top: 100%;
         right: 0;
         transform: translateX(50%);
+
+        @include mobile {
+          right: 50%;
+          width: 250px;
+        }
       }
     }
 
@@ -104,10 +186,26 @@
       top: 212px;
       right: 74%;
 
+      @include mobile {
+        right: 84%;
+        top: 165px;
+      }
+
+      #{$this}-line {
+        @include mobile {
+          width: 160%;
+        }
+      }
+
       #{$this}-text {
         top: 100%;
         left: 25px;
         transform: translateX(-50%);
+
+        @include mobile {
+          left: 0;
+          transform: none;
+        }
       }
     }
 
@@ -115,10 +213,21 @@
       top: 175px;
       right: 83%;
 
+      @include mobile {
+        top: 125px;
+        right: 80%;
+      }
+
       #{$this}-text {
         top: calc(100% - 32px);
         left: -35px;
         transform: translateX(-50%);
+
+        @include mobile {
+          top: 100%;
+          left: 5px;
+          transform: translateX(-10%);
+        }
       }
     }
 
@@ -126,10 +235,18 @@
       top: 135px;
       right: 53%;
 
+      @include mobile {
+        top: 95px;
+      }
+
       #{$this}-text {
         bottom: calc(100% + 5px);
         left: 0;
         transform: translateX(-90%);
+
+        @include mobile {
+          transform: translateX(-5%);
+        }
       }
     }
   }

@@ -8,6 +8,16 @@
     grid-template-columns: repeat(4, minmax(0%, 1fr));
     grid-gap: 40px 12px;
     text-align: center;
+
+    @include tablet {
+    grid-template-columns: repeat(3, minmax(0%, 1fr));
+    grid-gap: 30px 12px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, minmax(0%, 1fr));
+      grid-gap: 30px 8px;
+    }
   }
 
   &__checkbox {
@@ -28,6 +38,14 @@
     height: 335px;
     overflow: hidden;
 
+    @include tablet {
+      height: 290px;
+    }
+
+    @include mobile {
+      height: 185px;
+    }
+
     &.aos-animate {
       perspective: 500px;
       overflow: visible;
@@ -45,6 +63,13 @@
     }
 
 
+  }
+
+  &__content {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__card-front {
@@ -76,11 +101,21 @@
     position: absolute;
     top: 16px;
     right: 16px;
+
+    @include mobile {
+      top: 8px;
+      right: 8px;
+    }
   }
 
   &__card-add-icon {
     fill: $color-main;
     transition: all .2s;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__card-back {
@@ -97,20 +132,38 @@
     transition: transform 0.4s ease-in;
     backface-visibility: hidden;
     transform: rotateY(180deg);
+
+    @include mobile {
+      padding: 10px;
+    }
   }
 
   &__card-title {
     font-size: 22px;
     font-weight: bold;
     margin-top: 15px;
+
+    @include mobile {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
   }
 
   &__card-text {
     margin-bottom: 4px;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 
   &__btn {
     margin-top: 20px;
     padding: 16px 40px;
+
+    @include mobile {
+      font-size: 14px;
+      margin-top: auto;
+    }
   }
 }

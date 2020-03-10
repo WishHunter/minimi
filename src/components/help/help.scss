@@ -1,17 +1,42 @@
 .help {
   padding: 75px 0;
 
+  @include tablet {
+    padding: 50px 0;
+  }
+
+  @include mobile {
+    padding: 25px 0;
+  }
+
   &__container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+
+    @include tablet {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
     text-align: center;
     min-width: 150px;
     padding: 0 5px;
+
+    @include tablet {
+      max-width: 33%;
+      flex-basis: 33%;
+      padding: 10px;
+    }
+
+    @include mobile {
+      max-width: 50%;
+      flex-basis: 50%;
+      padding: 10px 5px;
+    }
   }
 
   &__item-icon {
@@ -22,5 +47,9 @@
     margin: 0;
     margin-top: 12px;
     line-height: 1.6;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }

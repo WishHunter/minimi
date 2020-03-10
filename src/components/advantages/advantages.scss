@@ -1,15 +1,40 @@
 .advantages {
   padding: 100px 0;
 
+  @include tablet {
+    padding: 50px 0;
+  }
+
   &__container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__advantage {
     text-align: center;
+
+    @include tablet {
+      max-width: 33%;
+      flex-basis: 33%;
+      padding: 10px;
+    }
+
+    @include mobile {
+      max-width: 50%;
+      flex-basis: 50%;
+      padding: 10px 5px;
+    }
+  }
+
+  &__advantage-icon {
+    height: 41px;
   }
 
   &__advantage-text {

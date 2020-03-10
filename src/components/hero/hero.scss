@@ -6,6 +6,12 @@
 
   &__container {
     position: relative;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      padding-top: 80px;
+    }
   }
 
   &__content {
@@ -13,6 +19,18 @@
     max-width: 50%;
     position: relative;
     z-index: 2;
+
+    @include tablet {
+      max-width: 100%;
+      order: 1;
+      text-align: center;
+      position: static;
+      padding-top: 0;
+    }
+
+    @include mobile {
+      padding: 0 0 20px;
+    }
   }
 
   &__wins {
@@ -20,6 +38,19 @@
     align-items: center;
     max-width: 320px;
     margin-bottom: 40px;
+
+    @include tablet {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 350px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   &__wins-text {
@@ -27,6 +58,15 @@
     font-size: 16px;
     color: $color-gray;
     font-weight: normal;
+
+    @include tablet {
+      font-weight: 600;
+    }
+
+    @include mobile {
+      font-size: 14px;
+      text-align: left;
+    }
   }
 
   &__title {
@@ -34,12 +74,22 @@
     line-height: 1;
     font-weight: bold;
     margin-bottom: 40px;
+
+    @include mobile {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
   }
 
   &__desc {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 40px;
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
   }
 
   &__slider {
@@ -49,6 +99,17 @@
     width: 60%;
     height: 100%;
     overflow: visible;
+
+    @include tablet {
+      position: relative;
+      order: 0;
+      width: 70%;
+      height: auto;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__slider-slide {
@@ -73,6 +134,10 @@
     align-items: center;
     height: 100%;
     z-index: 2;
+
+    @include mobile {
+      display: none;
+    }
 
     .swiper-pagination-bullet {
       display: flex;

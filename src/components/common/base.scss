@@ -8,6 +8,16 @@ body {
   font-family: 'Jura';
   font-weight: 600;
   color: $color-white;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+section {
+  @include tablet {
+    overflow: hidden;
+  }
 }
 
 .content {
@@ -19,6 +29,15 @@ body {
   max-width: 1140px;
   padding: 0 20px;
   margin: 0 auto;
+
+  @include tablet {
+    max-width: 760px;
+  }
+
+  @include mobile {
+    max-width: 320px;
+    padding: 0 10px;
+  }
 }
 
 p, h1, h2 {
@@ -77,11 +96,19 @@ img {
     border-radius: 6px;
     transform: scale(.9, .75);
     transition: transform .2s;
+
+    @include tablet {
+      transform: none;
+    }
   }
 
   &--border::before {
     transform: scale(0);
     transition: transform .3s;
+
+    @include tablet {
+      transform: none;
+    }
   }
 
   &__text {

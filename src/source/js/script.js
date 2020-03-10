@@ -22,12 +22,23 @@ var swiper = new Swiper(".hero__slider", {
 var swiper = new Swiper(".reviews__slider", {
   loop: true,
   speed: 500,
-  slidesPerView: 4,
-  spaceBetween: 30,
+  slidesPerView: 1,
 
-  autoplay: {
-    delay: 6000,
-    disableOnInteraction: false,
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      }
+    },
+
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    }
   },
 
   pagination: {
@@ -42,7 +53,8 @@ var swiper = new Swiper(".reviews__slider", {
 });
 
 AOS.init({
-  anchorPlacement: "center-bottom"
+  anchorPlacement: "center-bottom",
+  disable: "mobile"
 });
 
 const btnsOpenPopup = document.querySelectorAll('.js-open-popup');

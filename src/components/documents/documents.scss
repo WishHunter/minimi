@@ -2,6 +2,14 @@
   padding: 40px 0;
   text-align: center;
 
+  @include tablet {
+    padding: 20px 0;
+  }
+
+  @include mobile {
+    padding: 0;
+  }
+
   $this: &;
 
   &__title {
@@ -9,18 +17,31 @@
     font-weight: bold;
     margin: 0;
     margin-bottom: 20px;
+
+    @include mobile {
+      font-size: 30px;
+    }
   }
 
   &__desc {
     font-size: 30px;
     color: $color-gray;
     font-weight: bold;
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &__flex {
     display: flex;
     justify-content: space-between;
     margin-top: 80px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__document {
@@ -28,6 +49,16 @@
     flex-direction: column;
     justify-content: space-between;
     max-width: 215px;
+
+    @include tablet {
+      margin-bottom: 40px;
+      max-width: 33.3%;
+    }
+
+    @include mobile {
+      max-width: 50%;
+      flex-basis: 50%;
+    }
 
     &:nth-of-type(3) {
       #{$this}__img {
@@ -44,6 +75,15 @@
     background-image: url('../img/document_bg.png');
     background-size: cover;
     background-position: center center;
+
+    @include tablet {
+      margin: 0 auto 22px;
+    }
+
+    @include mobile {
+      width: 105px;
+      height: 105px;
+    }
   }
 
   &__img {
@@ -52,6 +92,10 @@
     top: 50%;
     max-width: 120%;
     transform: translate(-50%, -50%);
+
+    @include mobile {
+      max-width: 110%;
+    }
   }
 
   &__text {
@@ -61,5 +105,13 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+
+    @include tablet {
+      padding: 0 20px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }

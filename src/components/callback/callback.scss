@@ -4,6 +4,14 @@
   background-size: cover;
   background-position: center center;
 
+  @include tablet {
+    margin: 40px 0;
+  }
+
+  @include mobile {
+    margin: 20px 0;
+  }
+
   &__container {
     position: relative;
   }
@@ -14,12 +22,26 @@
     left: -120px;
     max-width: 100%;
     width: 630px;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__content {
     position: relative;
     margin-left: 45%;
     padding: 72px 0;
+
+    @include tablet {
+      margin-left: 0;
+      text-align: center;
+      padding: 40px 0 72px;
+    }
+
+    @include mobile {
+      padding: 28px 0 36px;
+    }
   }
 
   &__title {
@@ -28,6 +50,15 @@
     margin-bottom: 28px;
     font-size: 42px;
     font-weight: bold;
+
+    @include tablet {
+      margin: 0 auto 28px;
+    }
+
+    @include mobile {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
   }
 
   &__desc {
@@ -35,6 +66,11 @@
     font-size: 30px;
     font-weight: bold;
     line-height: 1;
+
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
   }
 
   &__text {
@@ -43,6 +79,11 @@
     font-size: 20px;
     font-weight: bold;
     line-height: 1.5;
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 26px;
+    }
   }
 
   &__input {
@@ -61,8 +102,25 @@
     color: #292421;
     font-weight: bold;
 
+    @include tablet {
+      margin: 0 auto 36px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+      padding: 24px 12px 24px 56px;
+      background-position: 9px center;
+      margin-bottom: 26px;
+    }
+
     &:focus {
       outline: none;
+    }
+  }
+
+  &__btn {
+    @include mobile {
+      font-size: 16px;
     }
   }
 }
