@@ -4,6 +4,13 @@
 
   $this: &;
 
+  .container {
+    @include mobile {
+      max-width: none;
+      padding: 0 15px;
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -29,11 +36,10 @@
   }
 
   &__mobile-block {
-    text-align: right;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    padding-top: 5px;
+    align-items: center;
+    flex-grow: 1;
   }
 
   &__title {
@@ -48,8 +54,11 @@
       @include mobile {
         display: block;
         padding-right: 10px;
-        font-size: 11px;
+        font-size: 10px;
         text-transform: uppercase;
+        max-width: 120px;
+        min-width: 120px;
+
       }
     }
 
@@ -68,7 +77,6 @@
     align-items: center;
 
     @include mobile {
-      align-items: stretch;
       justify-content: space-between;
       width: 100%;
     }
@@ -91,6 +99,7 @@
 
     @include mobile {
       justify-content: flex-end;
+      font-size: 14px;
     }
 
     &:hover {
@@ -126,8 +135,9 @@
     @include mobile {
       position: relative;
       display: block;
-      width: 46px;
-      height: 46px;
+      min-width: 20px;
+      max-width: 20px;
+      height: 20px;
       background-color: $color-main;
       background-image: url('../img/icons/phone-mob.png');
       background-size: 50%;
