@@ -69,6 +69,8 @@
 
     @include mobile {
       align-items: stretch;
+      justify-content: space-between;
+      width: 100%;
     }
   }
 
