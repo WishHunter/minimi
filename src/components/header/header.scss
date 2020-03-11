@@ -114,6 +114,15 @@
 
   &__link-callback {
     @include mobile {
+      display: none;
+    }
+  }
+
+  &__mobile-link {
+    display: none;
+
+    @include mobile {
+      position: relative;
       display: block;
       width: 46px;
       height: 46px;
@@ -146,10 +155,6 @@
         width: auto;
         height: auto;
         background: none;
-      }
-
-      span {
-        display: none;
       }
     }
   }
