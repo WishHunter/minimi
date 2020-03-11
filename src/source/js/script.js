@@ -1,9 +1,8 @@
-import { testing } from "./test";
 import { openPopup, closePopup } from "./popup";
+import { formSubmit } from "./form";
 import Swiper from "swiper";
 import AOS from "aos";
 
-testing();
 
 var swiper = new Swiper(".hero__slider", {
   loop: true,
@@ -70,4 +69,15 @@ Array.from(btnsOpenPopup).forEach(btn => {
 btnClosePopup.addEventListener('click', (e) => {
   e.preventDefault();
   closePopup();
+});
+
+
+const forms = document.querySelectorAll('.js-form-submit');
+
+Array.from(forms).forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        formSubmit(e.target);
+    })
 })
+

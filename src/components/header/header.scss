@@ -125,9 +125,50 @@
       border-radius: 100%;
       margin: 0;
 
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        border: 1px solid $color-main;
+        left: -10px;
+        right: -10px;
+        top: -10px;
+        bottom: -10px;
+        border-radius: 50%;
+        animation: pulse 1.5s linear infinite;
+        opacity: 0;
+        backface-visibility: hidden;
+      }
+
+      &:after{
+        animation-delay: .5s;
+        width: auto;
+        height: auto;
+        background: none;
+      }
+
       span {
         display: none;
       }
     }
   }
+}
+
+@keyframes pulse
+{
+	0%
+	{
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	50%
+	{
+		opacity: 1;
+	}
+	100%
+	{
+		transform: scale(1.2);
+		opacity: 0;
+	}
 }

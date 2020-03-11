@@ -8,10 +8,10 @@ mixin callback
           alt= 'callback_img'
           data-aos="fade-up"
           )
-        form.callback__content(action="")
+        form.callback__content.js-form-submit(action="")
           h3.callback__title Хотите щеночка другого окраса?
           p.callback__desc У нас есть любой
           p.callback__text Оставьте телефон, и мы отправим фото нужного щеночка, поможем с выбором и проконсультируем
-          input.callback__input(type="text" placeholder="Введите ваш номер телефона")
+          input.callback__input(type="tel" required pattern="^[ 0-9]+$" name='phone' placeholder="Введите ваш номер телефона")
           button.btn.btn--border.callback__btn
             span.btn__text Свяжитесь со мной!
