@@ -12,6 +12,8 @@ mixin callback
           h3.callback__title Хотите щеночка другого окраса?
           p.callback__desc У нас есть любой
           p.callback__text Оставьте телефон, и мы отправим фото нужного щеночка, поможем с выбором и проконсультируем
-          input.callback__input(type="tel" required pattern="^[ 0-9]+$" name='phone' placeholder="Введите ваш номер телефона")
+          .callback__input-block
+            .text-message
+            input.callback__input(type="tel" required pattern="^[ 0-9]+$" name='phone' placeholder="Введите ваш номер телефона")
           button.btn.btn--border.callback__btn
             span.btn__text Свяжитесь со мной!

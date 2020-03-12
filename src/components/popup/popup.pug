@@ -11,7 +11,8 @@ mixin popup
       form.popup__content.js-form-submit(action="")
         h3.popup__title Лучший щенок уже ждет Вас!
         p.popup__text Оставьте телефон, и мы отправим фото нужного щеночка, поможем с выбором и проконсультируем
-        .popup__flex
+        .popup__input-block
+          .text-message
           input.popup__input(type="tel" required pattern="^[ 0-9]+$" name='phone' placeholder="Введите Ваш номер телефона")
-          button.btn.btn--border.popup__btn
-            span.btn__text Хочу щенка!
+        button.btn.btn--border.popup__btn
+          span.btn__text Хочу щенка!

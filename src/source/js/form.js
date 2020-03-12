@@ -1,4 +1,16 @@
+const message = (text, input) => {
+  const textBlock = input.previousElementSibling;
+  textBlock.innerHTML = text;
+  textBlock.classList.add('active');
+  setTimeout(() => {
+    textBlock.classList.remove('active');
+  }, 3500);
+}
+
 const formSubmit = (form) => {
+
+  ym(60757945, 'reachGoal', 'order');
+
     const phone = form.elements.phone.value;
 
     let xhr = new XMLHttpRequest();
@@ -7,22 +19,27 @@ const formSubmit = (form) => {
         phone: phone
     });
 
-
     xhr.open("POST", '../../callback.php');
     xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 
-    xhr.send(json);
+  xhr.send(json);
 
-    xhr.onload = function() {
-        if (xhr.status != 200) {
-            console.log( 'Ошибка: ' + xhr.status);
-            console.log( 'Текст ошибки: ' + xhr.statusText);
-            return;
-        }
+  let text = 'Спасибо, с вами свяжутся в ближайшее время';
+
+  xhr.onload = function () {
+
+    if (xhr.status != 200) {
+      text = 'Упс, Ошибка: ' + xhr.status + ' ' + xhr.statusText;
+      message(text, form.elements.phone);
+      return;
+    }
+    form.elements.phone.value = '';
+    message(text, form.elements.phone);
     };
 
     xhr.onerror = function() {
-        console.log( 'Скорей всего нет соединения');
+      text = 'Нет соединения';
+      message(text, form.elements.phone);
     };
 };
 
